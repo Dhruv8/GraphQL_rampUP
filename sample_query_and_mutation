@@ -1,0 +1,55 @@
+#Queries
+
+query {
+  blogPosts {
+    id
+    posts {
+      id
+      sections{
+        id
+        name
+      } 
+    } 
+  }
+}
+
+
+query {
+    categories {
+      id 
+      title
+      posts {
+        id
+        title
+        body
+      }
+    }
+}
+
+
+#Mutations
+
+
+mutation {
+ createBlogPost(input: {
+   title: "Andy Leverenz"
+ }) {
+   blogPost {
+     id,
+     title
+   }
+   errors
+ }
+
+
+ mutation {
+ createCategory(input: {
+   title: "Anrenz"
+ }) {
+   category {
+     id,
+     title
+   }
+   errors
+ }
+}
